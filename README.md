@@ -47,21 +47,6 @@ EmartApp is a **sample e-commerce web application** built for learning real-worl
 5. Heavy operations are offloaded to **libuv thread pool** or **worker threads**
 6. Response written to socket → OS sends back to client
 
-### 🔹 npm Script Lifecycle Hooks
-npm executes scripts in the sequence:
-
-pre<command> → <command> → post<command>
-
- 
-
-Example for install & publish:
-
-npm install:
-preinstall → install → postinstall → prepare
-
-npm publish:
-prepare → prepublishOnly → prepack → pack → postpack → publish → postpublish
-
  
 
 ---
