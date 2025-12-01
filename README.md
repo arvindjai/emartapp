@@ -1,6 +1,5 @@
-# emart-app
 
-# 🛒 EmartApp – E-Commerce Project
+# 🛒 EmartApp – DevOps Learning E-Commerce Project
 
 EmartApp is a **sample e-commerce web application** built for learning real-world **DevOps workflows**, including:
 
@@ -15,14 +14,10 @@ EmartApp is a **sample e-commerce web application** built for learning real-worl
 
 ## 🧩 Architecture Overview
 
-Client (Browser)
-↓ (HTTP/HTTPS)
-NGINX (Reverse Proxy/API Gateway)
-↓──────────────↓
-Node.js API Java API
-↓──────────────↓
-Data Layer (DB / Cache / Message Queue - can be extended)
 
+![image alt](https://github.com/arvindjai/emartapp/blob/50c4c08ca020e787f5701d45e3d1d996da81a4fb/emartapp1.png?raw=true)
+
+ 
 
 ---
 
@@ -57,6 +52,7 @@ npm executes scripts in the sequence:
 
 pre<command> → <command> → post<command>
 
+ 
 
 Example for install & publish:
 
@@ -66,20 +62,23 @@ preinstall → install → postinstall → prepare
 npm publish:
 prepare → prepublishOnly → prepack → pack → postpack → publish → postpublish
 
-
+ 
 
 ---
 
 ## 🐳 Running Locally (Docker Compose)
 
 ### 1️⃣ Clone repository
+`git clone https://github.com/arvindjai/emartapp.git`
 
-git clone https://github.com/arvindjai/emartapp.git
+`cd emartapp`
 
-cd emartapp
+ 
 
 ### 2️⃣ Build and run all services
-docker compose up --build -d
+`docker compose up --build -d`
+
+ 
 
 ### 3️⃣ Access application
 - UI → `http://localhost`
@@ -87,12 +86,14 @@ docker compose up --build -d
 - Java API → `http://localhost/java/...` (depends on nginx routing)
 
 ### 4️⃣ View logs
-docker compose logs -f
+`docker compose logs -f`
 
+ 
 
 ### 5️⃣ Stop app
-docker compose down
+`docker compose down`
 
+ 
 
 ---
 
@@ -100,23 +101,21 @@ docker compose down
 
 Typical pipeline flow defined in `Jenkinsfile`:
 
-
-
-Checkout Code
-↓
-Build Frontend + Backend Services
-↓
+Checkout Code →
+ Build Frontend + Backend Services
+→
 Run Unit Tests
-↓
+→
 Build Docker Images
-↓
-Push to Registry (can be added)
-↓
+→
+
+Push to Registry
+→
 Deploy Containers
-↓
-Post-Deployment Tests (can be extended)
+→
+Post-Deployment Tests
 
-
+ 
 
 ---
 
@@ -135,11 +134,11 @@ Post-Deployment Tests (can be extended)
 
 ## ❗Limitations (Since This is a Learning Repo)
 
-This project is designed to learn, so you may extend with:
+*This project is designed to learn, so you may extend with:*
 
 🔸 Database persistence (Postgres/MySQL/Mongo)  
 🔸 Caching layer (Redis/Memcache)  
-�� Message queue (RabbitMQ/Kafka)  
+🔸 Message queue (RabbitMQ/Kafka)  
 🔸 Monitoring (Prometheus, Grafana, ELK, PM2, APM tools)  
 🔸 Secrets management (AWS SSM, Vault, GitHub Secrets)
 
@@ -147,7 +146,7 @@ This project is designed to learn, so you may extend with:
 
 ## 📌 Useful Extensions for DevOps Practice
 
-You can use this repo to practice:
+**You can use this repo to practice:**
 
 - Docker image builds
 - Reverse proxy routing
@@ -168,4 +167,3 @@ Feel free to fork and enhance the project for additional DevOps learning!
 ## 📄 License
 
 This is a demo/learning project intended for DevOps practice.
-
